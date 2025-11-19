@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ dark:false }" :class="dark ? 'dark' : ''">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Lost & Found Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body class="relative transition-colors duration-500 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-200">
+
+  <!-- Background Image with Overlay -->
+  <div class="fixed inset-0 z-0">
+    <img src="contactbg.png" 
+         class="w-full h-full object-cover">
+    <div class="absolute inset-0 backdrop-blur-md transition-colors duration-500"
+         :class="dark ? 'bg-black bg-opacity-60' : 'bg-white bg-opacity-25'"></div>
+  </div>
+
+  <!-- Floating circles for effect -->
+  <div class="fixed inset-0 pointer-events-none">
+    <div class="absolute w-40 h-40 bg-white bg-opacity-10 rounded-full animate-bounce-slow top-10 left-10"></div>
+    <div class="absolute w-60 h-60 bg-white bg-opacity-10 rounded-full animate-bounce-slow top-64 right-20"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="bg-white dark:bg-gray-800 shadow-lg fixed top-0 w-full z-50 transition-colors duration-500">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="logo.png" alt="Lost Item" width="120">
+        <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">Lost & Found</span>
+      </a>
+
+      <ul class="hidden md:flex gap-8 text-gray-600 dark:text-gray-300 font-medium">
+        <li><a href="index.html" class="hover:text-blue-600">Home</a></li>
+        <li><a href="dashboard.html" class="hover:text-blue-600">Dashboard</a></li>
+        <li><a href="report.html" class="hover:text-blue-600">Report</a></li>
+        <li><a href="contact.html" class="hover:text-blue-600">Contact</a></li>
+      </ul>
+
+      <!-- Dark mode toggle -->
+      <button @click="dark = !dark"
+              class="px-3 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg transition-colors duration-500">
+        <span x-show="!dark">🌙</span>
+        <span x-show="dark">☀️</span>
+      </button>
+
+      <a href="login.html"
+         class="ml-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-500">
+        Login
+      </a>
+    </div>
+  </nav>
+
+  <!-- Spacing below navbar -->
+  <div class="h-32"></div>
+
+  <!-- Contact Section -->
+  <div class="max-w-xl mx-auto bg-white bg-opacity-90 dark:bg-gray-800 dark:bg-opacity-80 p-10 rounded-xl shadow-lg backdrop-blur-md relative z-10 transition-colors duration-500">
+
+    <h2 class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-6 text-center">
+      Contact Us
+    </h2>
+
+    <form class="space-y-6">
+
+      <div class="relative">
+        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500">
+          👤
+        </span>
+        <input type="text" placeholder="Your Name"
+               class="w-full border border-gray-300 dark:border-gray-600 p-3 pl-10 rounded-lg dark:bg-gray-700 dark:text-gray-200 focus:ring-2 focus:ring-blue-400 transition duration-300">
+      </div>
+
+      <div class="relative">
+        <span class="absolute left-3 top-3 text-gray-400 dark:text-gray-500">
+          💬
+        </span>
+        <textarea placeholder="Your Message" rows="5"
+                  class="w-full border border-gray-300 dark:border-gray-600 p-3 pl-10 rounded-lg dark:bg-gray-700 dark:text-gray-200 focus:ring-2 focus:ring-blue-400 transition duration-300"></textarea>
+      </div>
+
+      <button type="submit"
+              class="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 hover:scale-105 transform transition duration-300">
+        Send Message
+      </button>
+
+    </form>
+  </div>
+
+  <!-- Tailwind animation for floating circles -->
+  <style>
+    @keyframes bounce-slow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    .animate-bounce-slow {
+      animation: bounce-slow 6s ease-in-out infinite;
+    }
+  </style>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ dark:false }" :class="dark ? 'dark' : ''">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report Lost / Found - Lost & Found Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body class="relative transition-colors duration-500 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-200">
+
+  <!-- Background Image + Translucent Dark Overlay -->
+  <div class="fixed inset-0 z-0">
+    <img src="background.png" class="w-full h-full object-cover">
+    <div class="absolute inset-0 transition-colors duration-500"
+         :class="dark ? 'bg-black bg-opacity-60' : 'bg-white bg-opacity-25'"
+         style="backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="bg-white dark:bg-gray-800 shadow-lg fixed top-0 w-full z-50 transition-colors duration-500">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="logo.png" alt="Lost Item" width="120">
+        <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">Lost & Found</span>
+      </a>
+
+      <ul class="hidden md:flex gap-8 text-gray-600 dark:text-gray-300 font-medium">
+        <li><a href="index.html" class="hover:text-blue-600">Home</a></li>
+        <li><a href="dashboard.html" class="hover:text-blue-600">Dashboard</a></li>
+        <li><a href="report.html" class="hover:text-blue-600">Report</a></li>
+        <li><a href="contact.html" class="hover:text-blue-600">Contact</a></li>
+      </ul>
+
+      <button @click="dark = !dark"
+              class="px-3 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg transition-colors duration-500">
+        <span x-show="!dark">🌙</span>
+        <span x-show="dark">☀️</span>
+      </button>
+
+      <a href="login.html"
+         class="ml-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-500">
+        Login
+      </a>
+    </div>
+  </nav>
+
+  <!-- Spacing below navbar -->
+  <div class="h-32"></div>
+
+  <!-- Page Heading -->
+  <h2 class="text-4xl font-bold text-center text-blue-600 dark:text-blue-400 my-12 relative z-10 transition-colors duration-500">
+    Report Lost / Found
+  </h2>
+
+  <!-- Form Container -->
+  <div class="max-w-3xl mx-auto bg-white bg-opacity-90 dark:bg-gray-800 dark:bg-opacity-80 p-8 rounded-xl shadow backdrop-blur-md z-10 relative transition-colors duration-500">
+
+    <form class="space-y-6">
+
+      <div>
+        <label class="text-gray-700 dark:text-gray-300">Your Name</label>
+        <input type="text" class="w-full border p-2 rounded dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200">
+      </div>
+
+      <div>
+        <label class="text-gray-700 dark:text-gray-300">Item Title</label>
+        <input type="text" class="w-full border p-2 rounded dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200">
+      </div>
+
+      <div>
+        <label class="text-gray-700 dark:text-gray-300">Category</label>
+        <select class="w-full border p-2 rounded dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200">
+          <option>Electronics</option>
+          <option>Bags</option>
+          <option>Clothing</option>
+          <option>Documents</option>
+          <option>Others</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="text-gray-700 dark:text-gray-300">Description</label>
+        <textarea class="w-full border p-3 rounded dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" rows="4"></textarea>
+      </div>
+
+      <div>
+        <label class="text-gray-700 dark:text-gray-300">Upload Image</label>
+        <input type="file" accept="image/*" class="w-full border p-2 rounded dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200">
+      </div>
+
+      <div class="flex gap-4">
+        <label class="flex items-center gap-2">
+          <input type="radio" name="type"> Lost
+        </label>
+        <label class="flex items-center gap-2">
+          <input type="radio" name="type"> Found
+        </label>
+      </div>
+
+      <button class="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition-colors duration-500">
+        Submit
+      </button>
+
+    </form>
+  </div>
+
+</body>
+</html>
