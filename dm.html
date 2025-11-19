@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lost‑N‑Found — Direct Messages</title>
+  <link rel="stylesheet" href="styles/dm.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Lost‑N‑Found — Messages</h1>
+    <nav class="top-actions">
+      <a href="index.html">Home</a>
+      <a href="report.html">Report</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+  </header>
+
+  <main class="dm-container">
+    <aside class="conversations">
+      <div class="conversations-header">
+        <strong>Conversations</strong>
+        <button id="newConvBtn" title="Start new conversation">＋</button>
+      </div>
+      <ul id="conversationsList" class="list"></ul>
+    </aside>
+
+    <section class="chat">
+      <div class="chat-header" id="chatHeader">
+        <div class="chat-title">Select a conversation</div>
+      </div>
+
+      <div id="messages" class="messages" aria-live="polite"></div>
+
+      <form id="messageForm" class="message-form">
+        <input id="messageInput" placeholder="Write a message..." autocomplete="off">
+        <button type="button" id="attachItemBtn" title="Attach item reference">📎</button>
+        <button type="submit" id="sendBtn">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <template id="convItemTmpl">
+    <li class="conv-item" data-id="">
+      <div class="avatar"></div>
+      <div class="meta">
+        <div class="name"></div>
+        <div class="snippet"></div>
+      </div>
+      <div class="time"></div>
+    </li>
+  </template>
+
+  <template id="msgTmpl">
+    <div class="msg" data-id="">
+      <div class="avatar"></div>
+      <div class="bubble">
+        <div class="sender"></div>
+        <div class="text"></div>
+        <div class="item-ref"></div>
+        <div class="ts"></div>
+      </div>
+    </div>
+  </template>
+
+  <div id="itemModal" class="modal hidden">
+    <div class="modal-panel">
+      <h3>Attach Item</h3>
+      <label>Item title
+        <input id="itemTitle" placeholder="Lost blue wallet">
+      </label>
+      <label>Item link (optional)
+        <input id="itemLink" placeholder="/report.html#123">
+      </label>
+      <div class="modal-actions">
+        <button id="cancelItem">Cancel</button>
+        <button id="attachItem">Attach</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/dm.js" defer></script>
+</body>
+</html>
