@@ -1,0 +1,7 @@
+venv
+/venv
+serviceAccountKey.json
+.DS_Store
+/node_modules
+.env
+__pycache__/

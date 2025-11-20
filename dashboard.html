@@ -68,24 +68,13 @@
     </select>
   </div>
 
-  <!-- Cards Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-  <!-- Wallet Card -->
-  <div class="bg-white bg-opacity-90 dark:bg-gray-800 dark:bg-opacity-80 shadow rounded-xl p-4 backdrop-blur-md transition-colors duration-500">
-    <img src="wallet.jpg" alt="Black Wallet" class="rounded mb-3">
-    <h3 class="font-semibold text-lg text-gray-800 dark:text-gray-200">Black Wallet</h3>
-    <p class="text-gray-600 dark:text-gray-400 text-sm">Found near library</p>
-    <button class="mt-3 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-500">Claim</button>
+  <!-- Items container populated by client JS -->
+  <div id="itemsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <!-- items will be injected here -->
   </div>
 
-  <!-- Backpack Card -->
-  <div class="bg-white bg-opacity-90 dark:bg-gray-800 dark:bg-opacity-80 shadow rounded-xl p-4 backdrop-blur-md transition-colors duration-500">
-    <img src="backpack.jpg" alt="Red Backpack" class="rounded mb-3">
-    <h3 class="font-semibold text-lg text-gray-800 dark:text-gray-200">Black Backpack</h3>
-    <p class="text-gray-600 dark:text-gray-400 text-sm">Lost in cafeteria</p>
-    <button class="mt-3 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-500">Claim</button>
-  </div>
-</div>
+  <script src="scripts/api.js" defer></script>
+  <script src="scripts/dashboard.js" defer></script>
 
 
   <!-- Footer -->
