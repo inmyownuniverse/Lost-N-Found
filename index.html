@@ -279,6 +279,7 @@
         <ul class="menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="dm.html">Messages</a></li>
             <li><a href="report.html">Report</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -298,9 +299,13 @@
         <h2>Quick Search</h2>
         <p>Look up lost or found items instantly.</p>
         <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
-            <input type="text" placeholder="Search by item name, color, location...">
-            <button>Search</button>
+            <input id="search_input" type="text" placeholder="Search by item name, color, location...">
+            <button id="search_btn">Search</button>
         </div>
+    </section>
+
+    <script src="scripts/api.js" defer></script>
+    <script src="scripts/search.js" defer></script>
     </section>
 
     <!-- FEATURES SECTION -->
